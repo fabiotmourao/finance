@@ -11,12 +11,11 @@
       class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
     >
       <div class="mx-auto w-full max-w-sm lg:w-96">
-        <div
-          v-if="message"
-          class="p-4 mb-4 text-sm text-white font-extrabold text-center rounded-lg bg-green-500 dark:bg-gray-800 dark:text-green-400"
-          role="alert"
-        >
-          {{ message }}
+
+        <div v-if="message" class="flex p-4 mb-4 items-center text-white rounded-lg bg-green-500 dark:bg-gray-800 dark:text-green-400" role="alert">
+            <div class="ms-3 text-sm font-medium">
+                {{ message }}
+            </div>
         </div>
         <div class="mt-6">
           <div>

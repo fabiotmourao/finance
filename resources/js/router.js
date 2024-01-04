@@ -1,33 +1,31 @@
 import { createRouter, createWebHistory } from "vue-router";
-import home from "./pages/home.vue";
-import register from "./pages/register.vue";
-import forgotPassword from "./pages/esqueceusenha.vue";
-import dashboard from "./pages/Dashboard/dashboard.vue";
-import test from "./pages/test.vue";
-import test2 from "./pages/test2.vue";
-import setting from "./pages/setting.vue";
+
 
 const routes = [
-    { path: "/", name: "Home", component: home },
+    {
+        path: "/",
+        name: "Home",
+        component: () => import('./pages/home.vue'),
+    },
     {
         path: "/dashboard",
         name: "Dashboard",
-        component: dashboard,
+        component: () => import('./pages/Dashboard/dashboard.vue'),
         children: [
             {
                 path: "/test",
                 name: "Test",
-                component: test,
+                component: () => import('./pages/test.vue'),
             },
             {
                 path: "/test2",
                 name: "Test2",
-                component: test2,
+                component: () => import('./pages/test2.vue') ,
             },
             {
                 path: "/setting",
                 name: "Setting",
-                component: setting,
+                component: () => import('./pages/setting.vue'),
             },
         ],
         meta: { requiresAuth: true },
@@ -35,12 +33,17 @@ const routes = [
     {
         path: "/register",
         name: "Register",
-        component: register,
+        component: () => import('./pages/register.vue'),
     },
     {
         path: "/forgot/password",
         name: "ForgotPassword",
-        component: forgotPassword,
+        component: () => import('./pages/forgotPassword.vue'),
+    },
+    {
+        path: "/reset-password",
+        name: "ResetPassword",
+        component: () => import('./pages/resetPassword.vue'),
     },
 ];
 
@@ -50,7 +53,7 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-    if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (to.matched.some((record) => record.meta.requiresAuth)) {
         try {
             // Verificar se o usuário está autenticado
             const response = await axios.get("api/user");
@@ -58,16 +61,15 @@ router.beforeEach(async (to, from, next) => {
             if (user) {
                 next();
             } else {
-                next({ name: 'Home' });
+                next({ name: "Home" });
             }
         } catch (error) {
             console.error("Erro ao verificar autenticação:", error.message);
-            next({ name: 'Home' });
+            next({ name: "Home" });
         }
     } else {
         next();
     }
 });
-
 
 export default router;
