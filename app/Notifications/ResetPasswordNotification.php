@@ -11,12 +11,16 @@ class ResetPasswordNotification extends Notification
 {
     use Queueable;
 
+    protected $token;
+
     /**
      * Create a new notification instance.
+     *
+     * @param string $token
      */
-    public function __construct()
+    public function __construct($token)
     {
-        //
+        $this->token = $token;
     }
 
     /**
@@ -34,13 +38,15 @@ class ResetPasswordNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
+        $resetUrl = url(config('app.url').route('password.reset', [
+            'token' => $this->token,
+            'email' => $notifiable->getEmailForPasswordReset(),
+        ], false));
+
         return (new MailMessage)
-            ->line('You are receiving this email because we received a password reset request for your account.')
-            ->action('Reset Password', url(config('app.url').route('password.reset', [
-                'token' => $this->token,
-                'email' => $notifiable->getEmailForPasswordReset(),
-            ], false)))
-            ->line('If you did not request a password reset, no further action is required.');
+            ->line('Você está recebendo este e-mail porque recebemos uma solicitação de redefinição de senha para sua conta.')
+            ->action('Redefinir Senha', $resetUrl)
+            ->line('Se você não solicitou a redefinição da senha, nenhuma ação adicional é necessária.');
     }
 
     /**

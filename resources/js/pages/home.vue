@@ -37,7 +37,7 @@
                                 type="text"
                                 v-model="fields.email"
                                 placeholder="E-mail"
-                                class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
+                                class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-purple-500 rounded focus:outline-none"
                             />
                             <div v-if="formErrors.email" class="text-red-500 text-xs mt-1">
                                 * {{ formErrors.email[0] }}
@@ -49,7 +49,7 @@
                                 type="password"
                                 v-model="fields.password"
                                 placeholder="Senha"
-                                class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
+                                class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-purple-500 rounded focus:outline-none"
                             />
                             <div
                                 v-if="formErrors.password"

@@ -19,7 +19,3 @@ Route::get('/{any}', function () {
     return view('welcome');
 })->where('any','.*');
 
-// Route::post('/register', [RegisterController::class, 'register'])->name('register');
-// Route::post('/login', [AuthController::class, 'login'])->name('login');
-
-

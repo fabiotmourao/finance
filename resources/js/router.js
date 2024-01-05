@@ -45,6 +45,10 @@ const routes = [
         name: "ResetPassword",
         component: () => import('./pages/resetPassword.vue'),
     },
+    {
+        path: "/:catchAll(.*)",
+        redirect: "/reset-password",
+    },
 ];
 
 const router = createRouter({
@@ -55,7 +59,6 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
     if (to.matched.some((record) => record.meta.requiresAuth)) {
         try {
-            // Verificar se o usuário está autenticado
             const response = await axios.get("api/user");
             const user = response.data;
             if (user) {
