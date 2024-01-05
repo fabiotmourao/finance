@@ -48,14 +48,18 @@
                 * {{ formErrors.email[0] }}
               </div>
             </div>
-            <div class="mb-4">
+            <div class="mb-4 flex gap-8">
               <button
                 :disabled="isButtonDisabled"
                 type="submit"
-                class="inline-block w-full py-4 px-8 leading-none text-white bg-purple-700 hover:bg-purple-900 font-semibold rounded shadow"
+                class="inline-block min-w-44 py-4 px-8 leading-none text-white bg-purple-700 hover:bg-purple-900 focus:outline-none focus:ring focus:ring-purple-600 font-semibold rounded shadow"
               >
                 Enviar
               </button>
+                <router-link :to="{ name: 'Home' }"
+                 class="inline-block min-w-44 py-4 px-8  border text-center leading-none  hover:bg-purple-100  focus:outline-none focus:ring focus:ring-purple-100  font-semibold rounded shadow">
+                    Voltar
+                </router-link>
             </div>
           </form>
         </div>
