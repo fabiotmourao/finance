@@ -123,7 +123,7 @@
       </div>
       <div class="">
         <div class="">
-            
+            <testeDash />
           <router-view></router-view>
         </div>
       </div>
@@ -132,7 +132,9 @@
   </div>
 </template>
 <script>
+import testeDash from '../pages/testeDash';
 export default {
+
   data() {
     return {
       user: {},
