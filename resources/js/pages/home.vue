@@ -3,7 +3,7 @@
         <div class="hidden lg:block relative w-0 flex-1 bg-purple-300">
             <div class="flex h-full justify-center items-center">
                 <h1 class="text-3xl font-extrabold text-purple-950">
-                    Coloque aqui sua Marca ou Logo!
+                    Coloque aqui sua Marca ou Logo! aqui vai um logo
                 </h1>
             </div>
         </div>
