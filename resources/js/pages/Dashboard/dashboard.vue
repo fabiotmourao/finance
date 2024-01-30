@@ -132,9 +132,7 @@
   </div>
 </template>
 <script>
-import testeDash from '../pages/testeDash';
 export default {
-
   data() {
     return {
       user: {},

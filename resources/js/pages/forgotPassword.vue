@@ -1,7 +1,9 @@
 <template>
   <div class="min-h-screen bg-white flex">
     <div class="hidden lg:block relative w-0 flex-1 bg-purple-300">
-      <div class="flex h-full justify-center items-center"></div>
+      <div class="flex h-full justify-center items-center">
+            <img src="./undraw_forgot_password_re_hxwm.svg" alt="Sua Logo" class="logo">
+      </div>
     </div>
     <div
       class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
