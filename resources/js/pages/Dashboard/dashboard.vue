@@ -123,7 +123,7 @@
       </div>
       <div class="">
         <div class="">
-            <testeDash />
+          <testeDash/>
           <router-view></router-view>
         </div>
       </div>
@@ -132,7 +132,10 @@
   </div>
 </template>
 <script>
+import testeDash from '../testeDash.vue';
+
 export default {
+  components: { testeDash },
   data() {
     return {
       user: {},

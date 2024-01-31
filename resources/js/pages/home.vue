@@ -1,5 +1,13 @@
 <template>
-    <div class="min-h-screen bg-white flex">
+    <div class="min-h-screen bg-white flex flex-col lg:flex-row">
+        <!-- Imagem responsiva para dispositivos menores que lg -->
+        <div class="lg:hidden w-full bg-purple-300">
+            <div class="flex h-full justify-center items-center">
+                <img src="./undraw_finance_re_gnv2.svg" alt="Sua Logo" class="logo mx-auto max-w-full h-auto">
+            </div>
+        </div>
+
+        <!-- Imagem para dispositivos lg e maiores -->
         <div class="hidden lg:block relative w-0 flex-1 bg-purple-300">
             <div class="flex h-full justify-center items-center">
                 <img src="./undraw_finance_re_gnv2.svg" alt="Sua Logo" class="logo">
