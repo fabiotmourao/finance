@@ -1,12 +1,12 @@
 <template>
-  <div class="min-h-screen bg-white flex">
-    <div class="hidden lg:block relative w-0 flex-1 bg-purple-300">
-      <div class="flex h-full justify-center items-center">
-            <img src="./undraw_add_information_j2wg.svg" alt="Sua Logo" class="logo">
+  <div class="min-h-screen bg-white flex flex-col lg:flex-row">
+    <div class="lg:pt-48 w-full bg-purple-300">
+      <div class="flex flex-col items-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+            <img src="./undraw_add_information_j2wg.svg" alt="Sua Logo" class="logo max-w-full h-auto">
       </div>
     </div>
     <div
-      class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
+      class="flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
     >
       <div class="mx-auto w-full max-w-sm lg:w-96">
 

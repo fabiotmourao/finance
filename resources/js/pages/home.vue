@@ -1,26 +1,18 @@
 <template>
     <div class="min-h-screen bg-white flex flex-col lg:flex-row">
-        <!-- Imagem responsiva para dispositivos menores que lg -->
-        <div class="lg:hidden w-full bg-purple-300">
-            <div class="flex h-full justify-center items-center">
-                <img src="./undraw_finance_re_gnv2.svg" alt="Sua Logo" class="logo mx-auto max-w-full h-auto">
+        <div class="lg:pt-48 w-full bg-purple-300">
+            <div class="flex flex-col items-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+                <img src="./undraw_finance_re_gnv2.svg" alt="Sua Logo" class="logo max-w-full h-auto" />
             </div>
         </div>
 
-        <!-- Imagem para dispositivos lg e maiores -->
-        <div class="hidden lg:block relative w-0 flex-1 bg-purple-300">
-            <div class="flex h-full justify-center items-center">
-                <img src="./undraw_finance_re_gnv2.svg" alt="Sua Logo" class="logo">
-            </div>
-        </div>
-
-        <div class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+        <div class="flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <div v-if="formErrors.common" class="flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400" role="alert">
                 <div class="ms-3 text-sm font-medium">
                     {{ formErrors.common }}
                 </div>
             </div>
-            <div class="mx-auto w-full max-w-sm lg:w-96">
+            <div class="mx-auto w-full  lg:w-96">
                 <div>
                     <h2 class="mt-6 text-3xl font-semibold text-purple-700">
                         ENTRAR
@@ -45,7 +37,10 @@
                                 placeholder="E-mail"
                                 class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-purple-500 rounded focus:outline-none"
                             />
-                            <div v-if="formErrors.email" class="text-red-500 text-xs mt-1">
+                            <div
+                                v-if="formErrors.email"
+                                class="text-red-500 text-xs mt-1"
+                            >
                                 * {{ formErrors.email[0] }}
                             </div>
                         </div>
