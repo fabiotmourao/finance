@@ -7,7 +7,7 @@
         </div>
 
         <div class="flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-            <div v-if="formErrors.common" class="flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400" role="alert">
+            <div v-if="formErrors.common" class="flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-200 dark:text-red-400" role="alert">
                 <div class="ms-3 text-sm font-medium">
                     {{ formErrors.common }}
                 </div>
